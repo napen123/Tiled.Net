@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace Tiled
@@ -45,6 +46,34 @@ namespace Tiled
 
         [XmlElement("object")]
         public List<TiledObject> Objects;
+
+        public TiledObject this[int id]
+        {
+            get { return Objects.FirstOrDefault(o => o.Id == id); }
+            set
+            {
+                var i = Objects.FindIndex(o => o.Id == id);
+
+                if (i == -1)
+                    Objects.Add(value);
+                else
+                    Objects[i] = value;
+            }
+        }
+
+        public TiledObject this[string name]
+        {
+            get { return Objects.FirstOrDefault(o => o.Name == name); }
+            set
+            {
+                var i = Objects.FindIndex(o => o.Name == name);
+
+                if (i == -1)
+                    Objects.Add(value);
+                else
+                    Objects[i] = value;
+            }
+        }
 
         public bool ShouldSerializeColorHex()
         {

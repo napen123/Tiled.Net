@@ -37,27 +37,6 @@ namespace Tiled.Net.Test
         }
 
         [TestMethod]
-        public void AccessTest()
-        {
-            var map = new TiledMap("test.tmx");
-
-            Assert.IsNotNull(map.Layers);
-            Assert.AreEqual(3, map.Layers.Count);
-
-            Assert.IsNotNull(map.Layers[0] as TiledTileLayer);
-            Assert.IsNotNull(map.Layers[1] as TiledObjectGroup);
-            Assert.IsNotNull(map.Layers[2] as TiledTileLayer);
-
-            Assert.IsNotNull(map["Background"] as TiledTileLayer);
-            Assert.IsNotNull(map["Middleground"] as TiledObjectGroup);
-            Assert.IsNotNull(map["Foreground"] as TiledTileLayer);
-
-            map["Middleground"] = new TiledTileLayer {Name = "Middleground" };
-
-            Assert.IsNotNull(map["Middleground"]);
-        }
-
-        [TestMethod]
         public void ReadTest()
         {
             var map = new TiledMap("test.tmx");
@@ -97,6 +76,39 @@ namespace Tiled.Net.Test
 
             Assert.AreEqual(85, rect1.Height);
             Assert.AreEqual(85, rect2.Height);
+        }
+
+        [TestMethod]
+        public void LayerAccessTest()
+        {
+            var map = new TiledMap("test.tmx");
+            
+            Assert.IsNotNull(map.Layers[0] as TiledTileLayer);
+            Assert.IsNotNull(map.Layers[1] as TiledObjectGroup);
+            Assert.IsNotNull(map.Layers[2] as TiledTileLayer);
+
+            Assert.IsNotNull(map["Background"] as TiledTileLayer);
+            Assert.IsNotNull(map["Middleground"] as TiledObjectGroup);
+            Assert.IsNotNull(map["Foreground"] as TiledTileLayer);
+
+            map["Middleground"] = new TiledTileLayer {Name = "Middleground" };
+
+            Assert.IsNotNull(map["Middleground"]);
+        }
+
+        [TestMethod]
+        public void ObjectAccessTest()
+        {
+            var map = new TiledMap("test.tmx");
+            var middle = map["Middleground"] as TiledObjectGroup;
+
+            Assert.IsNotNull(middle);
+
+            Assert.IsNotNull(middle["LeftRectangle"]);
+            Assert.IsNotNull(middle["RightRectangle"]);
+
+            Assert.IsNotNull(middle[1]);
+            Assert.IsNotNull(middle[2]);
         }
     }
 }

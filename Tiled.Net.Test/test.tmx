@@ -18,8 +18,8 @@
 </data>
  </layer>
  <objectgroup name="Middleground">
-  <object id="1" x="16" y="36" width="16" height="85"/>
-  <object id="2" x="128" y="36" width="16" height="85"/>
+  <object id="1" name="LeftRectangle" x="16" y="36" width="16" height="85"/>
+  <object id="2" name="RightRectangle" x="128" y="36" width="16" height="85"/>
  </objectgroup>
  <layer name="Foreground" width="10" height="10">
   <data encoding="csv">
