@@ -5,11 +5,22 @@ using System.Xml.Serialization;
 
 namespace Tiled
 {
+    /// <summary>
+    /// Represents a polyline object (<see cref="TiledObject"/>).
+    /// </summary>
     public class TiledPolyline : TiledBaseObject
     {
+        /// <summary>
+        /// A list of x,y coordinates in pixels.
+        /// </summary>
         [XmlIgnore]
         public List<Tuple<int, int>> Points;
 
+        /// <summary>
+        /// The points in string format (<c>0,0 12,5 5,7 ...</c>).
+        /// Gets and sets the points in string format (<c>0,0 12,5 5,7 ...</c>).
+        /// For a traditional object, use <see cref="Points"/>.
+        /// </summary>
         [XmlAttribute("points")]
         public string PointsString
         {

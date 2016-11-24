@@ -5,9 +5,6 @@ namespace Tiled
 {
     public class TiledImageLayer : TiledBaseLayer
     {
-        [XmlAttribute("name")]
-        public string Name;
-
         [XmlAttribute("offsetx")]
         public int OffsetX;
 
