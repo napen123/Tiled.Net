@@ -6,9 +6,6 @@ namespace Tiled
 {
     public class TiledTileLayer : TiledBaseLayer
     {
-        [XmlAttribute("name")]
-        public string Name;
-
         [XmlAttribute("x")]
         public int X;
 

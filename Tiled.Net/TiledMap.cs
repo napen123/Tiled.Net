@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
@@ -174,6 +175,20 @@ namespace Tiled
                     {
                         new XmlQualifiedName("", "")
                     }));
+            }
+        }
+
+        public TiledBaseLayer this[string name]
+        {
+            get { return Layers.FirstOrDefault(layer => layer.Name == name); }
+            set
+            {
+                var i = Layers.FindIndex(layer => layer.Name == name);
+
+                if (i == -1)
+                    Layers.Add(value);
+                else
+                    Layers[i] = value;
             }
         }
 

@@ -14,9 +14,6 @@ namespace Tiled
             TopDown
         }
 
-        [XmlAttribute("name")]
-        public string Name;
-
         [XmlIgnore]
         public TiledColor Color = new TiledColor(160, 160, 164);
 

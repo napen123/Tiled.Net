@@ -35,5 +35,68 @@ namespace Tiled.Net.Test
                 Assert.AreEqual("Tile Layer", layer.Name);
             }
         }
+
+        [TestMethod]
+        public void AccessTest()
+        {
+            var map = new TiledMap("test.tmx");
+
+            Assert.IsNotNull(map.Layers);
+            Assert.AreEqual(3, map.Layers.Count);
+
+            Assert.IsNotNull(map.Layers[0] as TiledTileLayer);
+            Assert.IsNotNull(map.Layers[1] as TiledObjectGroup);
+            Assert.IsNotNull(map.Layers[2] as TiledTileLayer);
+
+            Assert.IsNotNull(map["Background"] as TiledTileLayer);
+            Assert.IsNotNull(map["Middleground"] as TiledObjectGroup);
+            Assert.IsNotNull(map["Foreground"] as TiledTileLayer);
+
+            map["Middleground"] = new TiledTileLayer {Name = "Middleground" };
+
+            Assert.IsNotNull(map["Middleground"]);
+        }
+
+        [TestMethod]
+        public void ReadTest()
+        {
+            var map = new TiledMap("test.tmx");
+
+            Assert.AreEqual(16, map.TileWidth);
+            Assert.AreEqual(16, map.TileHeight);
+
+            Assert.IsNotNull(map.Layers);
+            Assert.AreEqual(3, map.Layers.Count);
+
+            var background = map.Layers[0] as TiledTileLayer;
+            var middleground = map.Layers[1] as TiledObjectGroup;
+            var foreground = map.Layers[2] as TiledTileLayer;
+
+            Assert.IsNotNull(background);
+            Assert.IsNotNull(middleground);
+            Assert.IsNotNull(foreground);
+
+            Assert.AreEqual("Background", background.Name);
+            Assert.AreEqual("Middleground", middleground.Name);
+            Assert.AreEqual("Foreground", foreground.Name);
+
+            Assert.IsNotNull(middleground.Objects);
+            Assert.AreEqual(2, middleground.Objects.Count);
+
+            var rect1 = middleground.Objects[0];
+            var rect2 = middleground.Objects[1];
+
+            Assert.AreEqual(16, rect1.X);
+            Assert.AreEqual(128, rect2.X);
+
+            Assert.AreEqual(36, rect1.Y);
+            Assert.AreEqual(36, rect2.Y);
+
+            Assert.AreEqual(16, rect1.Width);
+            Assert.AreEqual(16, rect2.Width);
+
+            Assert.AreEqual(85, rect1.Height);
+            Assert.AreEqual(85, rect2.Height);
+        }
     }
 }

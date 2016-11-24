@@ -7,5 +7,7 @@ namespace Tiled
     [XmlInclude(typeof(TiledImageLayer))]
     public abstract class TiledBaseLayer
     {
+        [XmlAttribute("name")]
+        public string Name;
     }
 }
