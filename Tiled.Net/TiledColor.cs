@@ -94,13 +94,13 @@ namespace Tiled
         public static TiledColor FromHex(string hex)
         {
             hex = hex.Substring(1);
-
+            
             if (hex.Length == 8)
-                return new TiledColor(Convert.ToByte(hex.Substring(0, 2)), Convert.ToByte(hex.Substring(2, 4)),
-                    Convert.ToByte(hex.Substring(4, 6), Convert.ToByte(hex.Substring(6, 8))));
+                return new TiledColor(Convert.ToByte(hex.Substring(0, 2), 16), Convert.ToByte(hex.Substring(2, 2), 16),
+                    Convert.ToByte(hex.Substring(4, 2), 16), Convert.ToByte(hex.Substring(6, 2)));
 
-            return new TiledColor(Convert.ToByte(hex.Substring(0, 2)), Convert.ToByte(hex.Substring(2, 4)),
-                Convert.ToByte(hex.Substring(4, 6)));
+            return new TiledColor(Convert.ToByte(hex.Substring(0, 2), 16), Convert.ToByte(hex.Substring(2, 2), 16),
+                Convert.ToByte(hex.Substring(4, 2), 16));
         }
 
         /// <summary>
@@ -110,8 +110,8 @@ namespace Tiled
         /// <returns>A color based on the given <paramref name="hex"/> string.</returns>
         public static TiledColor FromTrans(string hex)
         {
-            return new TiledColor(Convert.ToByte(hex.Substring(0, 2)), Convert.ToByte(hex.Substring(2, 4)),
-                Convert.ToByte(hex.Substring(4, 6)));
+            return new TiledColor(Convert.ToByte(hex.Substring(0, 2), 16), Convert.ToByte(hex.Substring(2, 2), 16),
+                Convert.ToByte(hex.Substring(4, 2), 16));
         }
     }
 }
