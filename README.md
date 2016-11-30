@@ -27,6 +27,9 @@ var map = new TiledMap("my-map.tmx");
 ### Accessing Layers
 ```csharp
 var layer = map.Layers[0] as TiledTileLayer;
+// or
+var layer = map["My Layer"] as TiledTileLayer;
+...
 var layerName = layer.Name;
 ...
 ```
