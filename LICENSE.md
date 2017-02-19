@@ -1,7 +1,6 @@
-#Tile.Net License
 BSD 3-Clause License
 
-Copyright (c) 2016, Ethan Dagner
+Copyright (c) 2017, Ethan Dagner
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -28,9 +27,3 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-# Tile.Net Documentation
-The Tile.Net documentation is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
-
-# TMX Map Format License
-The TMX Map Format by [http://www.mapeditor.org](http://www.mapeditor.org) is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
