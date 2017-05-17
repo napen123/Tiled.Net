@@ -111,5 +111,15 @@ namespace Tiled.Net.Test
             Assert.IsNotNull(middle[1]);
             Assert.IsNotNull(middle[2]);
         }
+
+        [TestMethod]
+        public void EncodingTest()
+        {
+            var map = new TiledMap("encoding.tmx");
+            var tiles = map.Layers[0] as TiledTileLayer;
+            
+            Assert.IsNotNull(tiles);
+            Assert.AreEqual("eJxjYmBgYMKCGZEwshgTFjF0degYAAjsACs=", tiles.Data.Data.Trim());
+        }
     }
 }
