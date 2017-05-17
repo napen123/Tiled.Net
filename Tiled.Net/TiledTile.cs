@@ -5,15 +5,15 @@ using System.Collections.Generic;
 namespace Tiled
 {
     /// <summary>
-    /// Represents a tile within a tileset (<see cref="TiledTileset"/>).
+    /// Represents a tile within a tileset.
     /// </summary>
     /// <remarks>Not to be confused with a tile within a tile layer (<see cref="TiledTileData"/>).</remarks>
+    /// <see cref="TiledTileset"/>
     public class TiledTile
     {
         /// <summary>
         /// The terrain type of each corner of a tile.
         /// </summary>
-        /// <remarks>Available since <see cref="TiledMap.Version"/> 0.9</remarks>
         public enum TerrainType
         {
             NoTerrain,
@@ -38,9 +38,8 @@ namespace Tiled
         public int Id;
 
         /// <summary>
-        /// Defines the terrain type of each corner of the tile. This is optional (use <see cref="TerrainType.NoTerrain"/>).
+        /// Defines the terrain type of each corner of the tile.
         /// </summary>
-        /// <remarks>Available since <see cref="TiledMap.Version"/> 0.9</remarks>
         [XmlAttribute("terrain")]
         public TerrainType Terrain;
 
@@ -48,7 +47,6 @@ namespace Tiled
         /// A percentage indicating the probability that this tile is chosen when it competes with others while editing with the terrain tool.
         /// This is optional.
         /// </summary>
-        /// <remarks>Available since <see cref="TiledMap.Version"/> 0.9</remarks>
         [XmlAttribute("probability")]
         public float Probability = 1;
 

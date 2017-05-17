@@ -54,38 +54,26 @@ namespace Tiled
         }
 
         /// <summary>
-        /// Convert the color to a hex string (<c>#AARRGGBB</c>, if <paramref name="withAlpha"/>; <c>#RRGGBB</c>, otherwise.
+        /// Convert the color to a hex string.
         /// </summary>
-        /// <param name="withAlpha">Whether or not to include <see cref="Alpha"/>.</param>
-        /// <returns>The color in hex format (<c>#AARRGGBB</c>, if <paramref name="withAlpha"/>; <c>#RRGGBB</c>, otherwise.</returns>
-        public string ToHex(bool withAlpha = true)
+        /// <returns>The color in hex format.</returns>
+        public string ToHex()
         {
-            if (withAlpha)
+            if (Alpha == 255)
             {
                 return "#" +
-                       Alpha.ToString("x2") +
                        Red.ToString("x2") +
                        Green.ToString("x2") +
                        Blue.ToString("x2");
             }
 
             return "#" +
+                   Alpha.ToString("x2") +
                    Red.ToString("x2") +
                    Green.ToString("x2") +
                    Blue.ToString("x2");
         }
-
-        /// <summary>
-        /// Convert the color to a hex string (<c>RRGGBB</c>).
-        /// </summary>
-        /// <returns>The color in hex format (<c>RRGGBB</c>).</returns>
-        public string ToTrans()
-        {
-            return Red.ToString("x2") +
-                   Green.ToString("x2") +
-                   Blue.ToString("x2");
-        }
-
+        
         /// <summary>
         /// Create a color from a hex string (either <c>#AARRGGBB</c> or <c>#RRGGBB</c>).
         /// </summary>

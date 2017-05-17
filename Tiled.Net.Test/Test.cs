@@ -43,7 +43,8 @@ namespace Tiled.Net.Test
 
             Assert.AreEqual(16, map.TileWidth);
             Assert.AreEqual(16, map.TileHeight);
-
+            Assert.AreEqual("#14323c", map.BackgroundColorHex.ToLower());
+            
             Assert.IsNotNull(map.Layers);
             Assert.AreEqual(3, map.Layers.Count);
 

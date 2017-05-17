@@ -16,11 +16,6 @@ namespace Tiled
         /// <summary>
         /// The types of map orientations.
         /// </summary>
-        /// <remarks>
-        /// <see cref="Staggered"/> is available since <see cref="Version"/> 0.9
-        /// <br />
-        /// <see cref="Hexagonal"/> is available since <see cref="Version"/> 0.11
-        /// </remarks>
         public enum OrientationType
         {
             [XmlEnum("orthogonal")]
@@ -94,14 +89,10 @@ namespace Tiled
         public OrientationType Orientation = OrientationType.Orthogonal;
 
         /// <summary>
-        /// The order in which tile layers (<see cref="TiledTileLayer"/>) render their tiles.
+        /// The order in which tile layers render their tiles.
         /// Only <see cref="OrientationType.Orthogonal"/> maps are supported.
         /// </summary>
-        /// <remarks>
-        /// The map is drawn row-by-row in all cases.
-        /// <br />
-        /// Available since <see cref="Version"/> 0.10
-        /// </remarks>
+        /// <see cref="TiledTileLayer"/>
         [XmlAttribute("renderorder")]
         public RenderOrderType RenderOrder = RenderOrderType.RightDown;
 
@@ -140,7 +131,6 @@ namespace Tiled
         /// Determines which axis (<see cref="StaggerAxisType.X"/> or <see cref="StaggerAxisType.Y"/>) is staggered.
         /// Only for <see cref="OrientationType.Staggered"/> and <see cref="OrientationType.Hexagonal"/> maps.
         /// </summary>
-        /// <remarks>Available since <see cref="Version"/> 0.11</remarks>
         [XmlAttribute("staggeraxis")]
         public StaggerAxisType StaggerAxis;
 
@@ -148,7 +138,6 @@ namespace Tiled
         /// Determines whether the <see cref="StaggerIndexType.Even"/> or <see cref="StaggerIndexType.Odd"/> indexes along the <see cref="StaggerAxis"/> are shifted.
         /// Only for <see cref="OrientationType.Staggered"/> and <see cref="OrientationType.Hexagonal"/> maps.
         /// </summary>
-        /// <remarks>Available since <see cref="Version"/> 0.11</remarks>
         [XmlAttribute("staggerindex")]
         public StaggerIndexType StaggerIndex;
 
@@ -163,23 +152,17 @@ namespace Tiled
         /// Setting the color in either <c>#RRGGBB</c> or <c>#AARRGGBB</c> is allowed,
         /// but getting will always return in <c>#AARRGGBB</c>-form. For a traditional object, use <see cref="BackgroundColor"/>.
         /// </summary>
-        /// <remarks>
-        /// Available since <see cref="Version"/> 0.9
-        /// <br />
-        /// Alpha is allowed since <see cref="Version"/> 0.15
-        /// </remarks>
         /// <returns>The map's background color in hex format.</returns>
         [XmlAttribute("backgroundcolor")]
         public string BackgroundColorHex
         {
-            get { return BackgroundColor.ToHex(); }
-            set { BackgroundColor = TiledColor.FromHex(value); }
+            get => BackgroundColor.ToHex();
+            set => BackgroundColor = TiledColor.FromHex(value);
         }
 
         /// <summary>
         /// The next available ID for new objects.
         /// </summary>
-        /// <remarks>Available since <see cref="Version"/> 0.11</remarks>
         [XmlAttribute("nextobjectid")]
         public int NextObjectId = 1;
 

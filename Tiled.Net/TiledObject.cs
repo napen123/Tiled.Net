@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 
@@ -13,11 +12,6 @@ namespace Tiled
         /// <summary>
         /// The object's unique id.
         /// </summary>
-        /// <remarks>
-        /// Cannot be changed in Tiled Qt.
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.11
-        /// </remarks>
         [XmlAttribute("id")]
         public int Id;
 
@@ -34,59 +28,45 @@ namespace Tiled
         public string Type;
 
         /// <summary>
-        /// The x-coordinate of the object in pixels.
+        /// The x-coordinate of the object.
         /// </summary>
         [XmlAttribute("x")]
         public float X;
 
         /// <summary>
-        /// The y-coordinate of the object in pixels.
+        /// The y-coordinate of the object.
         /// </summary>
         [XmlAttribute("y")]
         public float Y;
 
         /// <summary>
-        /// The width of the object in pixels.
+        /// The width of the object.
         /// </summary>
-        /// <remarks>Defaults to 0.</remarks>
         [XmlAttribute("width")]
         public float Width;
 
         /// <summary>
-        /// The height of the object in pixels.
+        /// The height of the object.
         /// </summary>
-        /// <remarks>Defaults to 0.</remarks>
         [XmlAttribute("height")]
         public float Height;
 
         /// <summary>
         /// The rotation of the object in degrees clockwise.
         /// </summary>
-        /// <remarks>
-        /// Defaults to 0
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.10
-        /// </remarks>
         [XmlAttribute("rotation")]
         public float Rotation;
 
         /// <summary>
-        /// A reference to a tile (optional).
+        /// A reference to a tile (optional). Note: Currently does not get saved.
         /// </summary>
-        /// <remarks>This currently does not get saved.</remarks>
-        [XmlIgnore] // TODO
+        [XmlIgnore]
         [XmlAttribute("gid")]
         public int GlobalId;
 
         /// <summary>
         /// Whether the object is shown (1) or hidden (0).
         /// </summary>
-        /// <remarks>
-        /// Defaults to 1
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.9
-        /// </remarks>
-        [DefaultValue(1)]
         [XmlAttribute("visible")]
         public int Visible = 1;
 

@@ -1,13 +1,15 @@
 ﻿using System.Linq;
-using System.ComponentModel;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 
 namespace Tiled
 {
     /// <summary>
-    /// Represents a layer that hold objects (<see cref="TiledEllipse"/>, <see cref="TiledPolygon"/>, and <see cref="TiledPolyline"/>).
+    /// Represents a layer that hold objects.
     /// </summary>
+    /// <see cref="TiledEllipse"/>
+    /// <see cref="TiledPolygon"/>
+    /// <see cref="TiledPolyline"/>
     public class TiledObjectGroup : TiledBaseLayer
     {
         /// <summary>
@@ -30,51 +32,35 @@ namespace Tiled
 
         /// <summary>
         /// The color used to display the objects in this group, in hex format (<c>#RRGGBB</c>).
-        /// Setting the color in either <c>#RRGGBB</c> or <c>#AARRGGBB</c> is allowed,
-        /// but getting will always return in <c>#RRGGBB</c>-form. For a traditional object, use <see cref="Color"/>.
         /// </summary>
         [XmlAttribute("color")]
         public string ColorHex
         {
-            get { return Color.ToHex(false); }
-            set { Color = TiledColor.FromHex(value); }
+            get => Color.ToHex();
+            set => Color = TiledColor.FromHex(value);
         }
 
         /// <summary>
         /// The opacity of the layer from 0-1.
         /// </summary>
-        /// <remarks>Defaults to 1.</remarks>
-        [DefaultValue(1)]
         [XmlAttribute("opacity")]
         public int Opacity = 1;
 
         /// <summary>
         /// Whether the layer is shown (1) or hidden (0).
         /// </summary>
-        /// <remarks>Defaults to 1.</remarks>
-        [DefaultValue(1)]
         [XmlAttribute("visible")]
         public int Visible = 1;
 
         /// <summary>
         /// The rendering x-offset for this object in pixels.
         /// </summary>
-        /// <remarks>
-        /// Defaults to 0
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.14
-        /// </remarks>
         [XmlAttribute("offsetx")]
         public int OffsetX;
 
         /// <summary>
         /// The rendering y-offset for this object in pixels.
         /// </summary>
-        /// <remarks>
-        /// Defaults to 0
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.14
-        /// </remarks>
         [XmlAttribute("offsety")]
         public int OffsetY;
 
@@ -82,7 +68,6 @@ namespace Tiled
         /// Whether the objects are drawn according to the order of appearance (<see cref="DrawOrderType.Index"/>)
         /// or sorted by their y-coordinate (<see cref="DrawOrderType.TopDown"/>).
         /// </summary>
-        /// <remarks>Defaults to <see cref="DrawOrderType.TopDown"/>.</remarks>
         [XmlAttribute("draworder")]
         public DrawOrderType DrawOrder = DrawOrderType.TopDown;
 
@@ -101,7 +86,6 @@ namespace Tiled
 
         /// <summary>
         /// Gets the object that has the given <paramref name="id"/>, if it exists; otherwise, return <c>null</c>.
-        /// <br />
         /// Sets the object that has the given <paramref name="id"/>, if it exists; otherwise, create a new object with that <paramref name="id"/>.
         /// </summary>
         /// <param name="id">The id of the object.</param>

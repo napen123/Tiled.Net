@@ -15,7 +15,7 @@ namespace Tiled
         public int FirstGlobalId;
 
         /// <summary>
-        /// If this tileset is stored in an external TSX (Tile Set XML) file, this is the path to the file.
+        /// If this tileset is stored in an external TSX (Tile Set XML) file, this is the path to it.
         /// </summary>
         [XmlAttribute("source")]
         public string Source;
@@ -55,7 +55,6 @@ namespace Tiled
         /// <summary>
         /// The number of tiles in this tileset.
         /// </summary>
-        /// <remarks>Available since <see cref="TiledMap.Version"/> 0.13</remarks>
         [XmlAttribute("tilecount")]
         public int TileCount;
 
@@ -64,8 +63,6 @@ namespace Tiled
         /// </summary>
         /// <remarks>
         /// For image collection tilesets it is editable and is used when displaying the tileset.
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.15
         /// </remarks>
         [XmlAttribute("columns")]
         public int Columns;
@@ -82,9 +79,7 @@ namespace Tiled
         /// The offset to use when drawing a tile from this tileset.
         /// </summary>
         /// <remarks>
-        /// When not present (<c>null</c>), no offset is applied.
-        /// <br />
-        /// Available since <see cref="TiledMap.Version"/> 0.8
+        /// When not present, no offset is applied.
         /// </remarks>
         [XmlElement("tileoffset")]
         public TiledTileOffset TileOffset;
@@ -98,7 +93,6 @@ namespace Tiled
         /// <summary>
         /// The types of terrain.
         /// </summary>
-        /// <remarks>Available since <see cref="TiledMap.Version"/> 0.9</remarks>
         [XmlArray("terraintypes")]
         [XmlArrayItem("terrain")]
         public List<TiledTerrain> TerrainTypes;

@@ -9,11 +9,8 @@ namespace Tiled
     {
         /// <summary>
         /// The format used for embedded image, in combination with <see cref="Data"/>.
-        /// Valid values are extensions like <c>png</c>, <c>gif</c>, <c>jpg</c>, <c>bmp</c>, etc.
+        /// Valid values include extensions such as png, gif, jpg, bmp, etc.
         /// </summary>
-        /// <remarks>
-        /// Available since <see cref="TiledMap.Version"/> 0.9
-        /// </remarks>
         [XmlAttribute("format")]
         public string Format;
 
@@ -31,15 +28,13 @@ namespace Tiled
         public TiledColor TransparentColor;
 
         /// <summary>
-        /// A specific color that is treated as transparent, in hex format (<c>RRGGBB</c>).
-        /// Both getting and setting only use <c>RRGGBB</c> form,
-        /// For a traditional object, use <see cref="TransparentColor"/>.
+        /// A specific color that is treated as transparent, in hex format (<c>#RRGGBB</c>).
         /// </summary>
         [XmlAttribute("trans")]
         public string TransparentColorHex
         {
-            get { return TransparentColor.ToTrans(); }
-            set { TransparentColor = TiledColor.FromTrans(value); }
+            get => TransparentColor.ToHex();
+            set => TransparentColor = TiledColor.FromHex(value);
         }
 
         /// <summary>

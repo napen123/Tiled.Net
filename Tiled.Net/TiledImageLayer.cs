@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 using System.Collections.Generic;
 
 namespace Tiled
@@ -11,11 +12,19 @@ namespace Tiled
         [XmlAttribute("offsety")]
         public int OffsetY;
 
+        [Obsolete("Deprecated since 0.15")]
         [XmlAttribute("x")]
         public int X;
 
+        [Obsolete("Deprecated since 0.15")]
         [XmlAttribute("y")]
         public int Y;
+
+        [XmlIgnore]
+        public int Width;
+
+        [XmlIgnore]
+        public int Height;
 
         [XmlAttribute("opacity")]
         public float Opacity = 1;

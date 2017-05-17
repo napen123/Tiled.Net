@@ -10,11 +10,6 @@ namespace Tiled
         /// <summary>
         /// The type of properties.
         /// </summary>
-        /// <remarks>
-        /// <see cref="File"/> is available since <see cref="TiledMap.Version"/> 0.17
-        /// <br />
-        /// <see cref="Color"/> is available since <see cref="TiledMap.Version"/> 0.16
-        /// </remarks>
         public enum PropertyType
         {
             [XmlEnum("string")]
@@ -45,15 +40,6 @@ namespace Tiled
         /// <summary>
         /// The property's type.
         /// </summary>
-        /// <remarks>
-        /// Boolean properties have a value of either <c>true</c> or <c>false</c>.
-        /// <br />
-        /// Color properties are stored in the format <c>#AARRGGBB</c>.
-        /// <br />
-        /// <see cref="File"/> is available since <see cref="TiledMap.Version"/> 0.17
-        /// <br />
-        /// <see cref="Color"/> is available since <see cref="TiledMap.Version"/> 0.16
-        /// </remarks>
         [XmlAttribute("type")]
         public PropertyType Type = PropertyType.String;
 
