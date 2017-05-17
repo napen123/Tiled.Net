@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Policy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tiled.Net.Test
@@ -120,6 +121,14 @@ namespace Tiled.Net.Test
             
             Assert.IsNotNull(tiles);
             Assert.AreEqual("eJxjYmBgYMKCGZEwshgTFjF0degYAAjsACs=", tiles.Data.Data.Trim());
+        }
+
+        [TestMethod]
+        public void IsometricTest()
+        {
+            var map = new TiledMap("isometric.tmx");
+            
+            Assert.AreEqual(TiledMap.OrientationType.Isometric, map.Orientation);
         }
     }
 }
