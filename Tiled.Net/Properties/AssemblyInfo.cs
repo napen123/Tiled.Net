@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Tiled.Net")]
-[assembly: AssemblyCopyright("Copyright © Ethan Dagner 2016")]
+[assembly: AssemblyCopyright("Copyright © Ethan Dagner 2016-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
