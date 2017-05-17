@@ -61,7 +61,7 @@ namespace Tiled.Net.Test
             Assert.AreEqual("Foreground", foreground.Name);
 
             Assert.IsNotNull(middleground.Objects);
-            Assert.AreEqual(2, middleground.Objects.Count);
+            Assert.AreEqual(3, middleground.Objects.Count);
 
             var rect1 = middleground.Objects[0];
             var rect2 = middleground.Objects[1];
