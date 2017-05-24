@@ -13,7 +13,7 @@ namespace Tiled
         /// </summary>
         [XmlAttribute("x")]
         public int X;
-        
+
         /// <summary>
         /// The vertical offset in pixels (positive is down).
         /// </summary>

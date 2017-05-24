@@ -241,7 +241,11 @@ namespace Tiled
         public void Save(string file, int indentationLevel = 4)
         {
             using (
-                var writer = new XmlTextWriter(file, Encoding.UTF8) {Formatting = Formatting.Indented, Indentation = indentationLevel })
+                var writer = new XmlTextWriter(file, Encoding.UTF8)
+                {
+                    Formatting = Formatting.Indented,
+                    Indentation = indentationLevel
+                })
             {
                 _serializer.Serialize(
                     writer, this,
@@ -258,8 +262,7 @@ namespace Tiled
         /// <param name="file">The path to save to.</param>
         public void SaveCompact(string file)
         {
-            using (
-                var writer = new XmlTextWriter(file, Encoding.UTF8))
+            using (var writer = new XmlTextWriter(file, Encoding.UTF8))
             {
                 _serializer.Serialize(
                     writer, this,

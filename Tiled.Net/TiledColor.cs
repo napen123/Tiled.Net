@@ -16,7 +16,7 @@ namespace Tiled
         /// The red.
         /// </summary>
         public byte Red;
-        
+
         /// <summary>
         /// The green.
         /// </summary>
@@ -73,7 +73,7 @@ namespace Tiled
                    Green.ToString("x2") +
                    Blue.ToString("x2");
         }
-        
+
         /// <summary>
         /// Create a color from a hex string (either <c>#AARRGGBB</c> or <c>#RRGGBB</c>).
         /// </summary>
@@ -82,10 +82,12 @@ namespace Tiled
         public static TiledColor FromHex(string hex)
         {
             hex = hex.Substring(1);
-            
+
             if (hex.Length == 8)
+            {
                 return new TiledColor(Convert.ToByte(hex.Substring(0, 2), 16), Convert.ToByte(hex.Substring(2, 2), 16),
                     Convert.ToByte(hex.Substring(4, 2), 16), Convert.ToByte(hex.Substring(6, 2)));
+            }
 
             return new TiledColor(Convert.ToByte(hex.Substring(0, 2), 16), Convert.ToByte(hex.Substring(2, 2), 16),
                 Convert.ToByte(hex.Substring(4, 2), 16));

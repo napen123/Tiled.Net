@@ -59,14 +59,14 @@ namespace Tiled
         [XmlArray("animation")]
         [XmlArrayItem("frame")]
         public List<TiledAnimationFrame> Animation;
-        
+
         /// <summary>
         /// Custom properties for the tile. These are arbitrary and are meant for the user.
         /// </summary>
         [XmlArray("properties")]
         [XmlArrayItem("property")]
         public List<TiledProperty> Properties;
-        
+
         /// <summary>
         /// Nothing to see here. Used for serialization.
         /// </summary>

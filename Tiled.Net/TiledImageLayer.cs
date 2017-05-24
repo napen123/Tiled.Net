@@ -34,7 +34,7 @@ namespace Tiled
 
         [XmlElement("image")]
         public TiledImage Image;
-        
+
         [XmlArray("properties")]
         [XmlArrayItem("property")]
         public List<TiledProperty> Properties;

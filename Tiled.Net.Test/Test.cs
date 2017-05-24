@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Security.Policy;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tiled.Net.Test
@@ -23,7 +23,7 @@ namespace Tiled.Net.Test
             // Read
             {
                 var map = new TiledMap("simple.tmx");
-                
+
                 Assert.AreEqual(16, map.TileWidth);
                 Assert.AreEqual(16, map.TileHeight);
 
@@ -45,7 +45,7 @@ namespace Tiled.Net.Test
             Assert.AreEqual(16, map.TileWidth);
             Assert.AreEqual(16, map.TileHeight);
             Assert.AreEqual("#14323c", map.BackgroundColorHex.ToLower());
-            
+
             Assert.IsNotNull(map.Layers);
             Assert.AreEqual(3, map.Layers.Count);
 
@@ -84,7 +84,7 @@ namespace Tiled.Net.Test
         public void LayerAccessTest()
         {
             var map = new TiledMap("test.tmx");
-            
+
             Assert.IsNotNull(map.Layers[0] as TiledTileLayer);
             Assert.IsNotNull(map.Layers[1] as TiledObjectGroup);
             Assert.IsNotNull(map.Layers[2] as TiledTileLayer);
@@ -93,7 +93,7 @@ namespace Tiled.Net.Test
             Assert.IsNotNull(map["Middleground"] as TiledObjectGroup);
             Assert.IsNotNull(map["Foreground"] as TiledTileLayer);
 
-            map["Middleground"] = new TiledTileLayer {Name = "Middleground" };
+            map["Middleground"] = new TiledTileLayer {Name = "Middleground"};
 
             Assert.IsNotNull(map["Middleground"]);
         }
@@ -118,7 +118,7 @@ namespace Tiled.Net.Test
         {
             var map = new TiledMap("encoding.tmx");
             var tiles = map.Layers[0] as TiledTileLayer;
-            
+
             Assert.IsNotNull(tiles);
             Assert.AreEqual("eJxjYmBgYMKCGZEwshgTFjF0degYAAjsACs=", tiles.Data.Data.Trim());
         }
@@ -127,7 +127,7 @@ namespace Tiled.Net.Test
         public void IsometricTest()
         {
             var map = new TiledMap("isometric.tmx");
-            
+
             Assert.AreEqual(TiledMap.OrientationType.Isometric, map.Orientation);
         }
 
