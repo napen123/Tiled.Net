@@ -51,19 +51,19 @@ namespace Tiled
         public float Probability = 1;
 
         /// <summary>
+        /// A list of animation frames.
+        /// </summary>
+        [XmlArray("animation")]
+        [XmlArrayItem("frame")]
+        public List<TiledAnimationFrame> Animation;
+        
+        /// <summary>
         /// Custom properties for the tile. These are arbitrary and are meant for the user.
         /// </summary>
         [XmlArray("properties")]
         [XmlArrayItem("property")]
         public List<TiledProperty> Properties;
-
-        /// <summary>
-        /// Custom properties for the tile. These are arbitrary and are meant for the user.
-        /// </summary>
-        [XmlArray("animation")]
-        [XmlArrayItem("frame")]
-        public List<TiledAnimationFrame> Animation;
-
+        
         /// <summary>
         /// Nothing to see here. Used for serialization.
         /// </summary>
