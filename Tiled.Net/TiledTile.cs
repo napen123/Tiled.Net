@@ -58,6 +58,13 @@ namespace Tiled
         public List<TiledProperty> Properties;
 
         /// <summary>
+        /// Custom properties for the tile. These are arbitrary and are meant for the user.
+        /// </summary>
+        [XmlArray("animation")]
+        [XmlArrayItem("frame")]
+        public List<TiledAnimationFrame> Animation;
+
+        /// <summary>
         /// Nothing to see here. Used for serialization.
         /// </summary>
         /// <returns></returns>
@@ -82,6 +89,15 @@ namespace Tiled
         public bool ShouldSerializeProperties()
         {
             return Properties != null && Properties.Count > 0;
+        }
+
+        /// <summary>
+        /// Nothing to see here. Used for serialization.
+        /// </summary>
+        /// <returns></returns>
+        public bool ShouldSerializeAnimation()
+        {
+            return Animation != null && Animation.Count > 0;
         }
     }
 }
