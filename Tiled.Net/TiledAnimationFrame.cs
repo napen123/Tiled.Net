@@ -1,22 +1,21 @@
-﻿using System;
-using System.Xml.Serialization;
-using System.Collections.Generic;
+﻿using System.Xml.Serialization;
 
 namespace Tiled
 {
     /// <summary>
-    /// Represents an animation for a tile (<see cref="TiledTile"/>).
+    /// Represents a frame within a tile's animation (<see cref="TiledTile"/>).
     /// </summary>
     public class TiledAnimationFrame
     {
         /// <summary>
-        /// The local tile ID within its tileset.
+        /// The local tile ID of a tile within its parent tileset.
         /// </summary>
         [XmlAttribute("tileid")]
         public int Tile;
 
         /// <summary>
-        /// The local tile ID within its tileset.
+        /// How long (in milliseconds) this frame should be displayed
+        /// before advancing to the next.
         /// </summary>
         [XmlAttribute("duration")]
         public int Duration;
