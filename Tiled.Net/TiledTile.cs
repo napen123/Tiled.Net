@@ -53,6 +53,9 @@ namespace Tiled
         /// <summary>
         /// A list of animation frames.
         /// </summary>
+        /// <remarks>
+        /// Currently, only one animation can be associated with a tile.
+        /// </remarks>
         [XmlArray("animation")]
         [XmlArrayItem("frame")]
         public List<TiledAnimationFrame> Animation;

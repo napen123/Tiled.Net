@@ -11,7 +11,7 @@ namespace Tiled
         /// The local tile ID of a tile within its parent tileset.
         /// </summary>
         [XmlAttribute("tileid")]
-        public int Tile;
+        public int TileId;
 
         /// <summary>
         /// How long (in milliseconds) this frame should be displayed

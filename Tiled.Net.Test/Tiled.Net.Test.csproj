@@ -60,6 +60,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="animation.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="encoding.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

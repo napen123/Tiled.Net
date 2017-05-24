@@ -130,5 +130,32 @@ namespace Tiled.Net.Test
             
             Assert.AreEqual(TiledMap.OrientationType.Isometric, map.Orientation);
         }
+
+        [TestMethod]
+        public void AnimationTest()
+        {
+            var map = new TiledMap("animation.tmx");
+
+            Assert.IsNotNull(map.Tilesets);
+            Assert.IsTrue(map.Tilesets.Count > 0);
+
+            var tiles = map.Tilesets[0].Tiles;
+
+            Assert.IsNotNull(tiles);
+            Assert.IsNotNull(tiles[0].Animation);
+            Assert.AreEqual(2, tiles[0].Animation.Count);
+
+            var frame0 = tiles[0].Animation[0];
+            var frame1 = tiles[0].Animation[1];
+
+            Assert.IsNotNull(frame0);
+            Assert.IsNotNull(frame1);
+
+            Assert.AreEqual(1, frame0.TileId);
+            Assert.AreEqual(0, frame1.TileId);
+
+            Assert.AreEqual(1000, frame0.Duration);
+            Assert.AreEqual(1000, frame1.Duration);
+        }
     }
 }

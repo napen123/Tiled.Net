@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="left-down" width="1" height="1" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="Tiles" tilewidth="16" tileheight="16" tilecount="2" columns="2">
+  <image source="tiles.png" width="32" height="16"/>
+  <tile id="1">
+   <animation>
+    <frame tileid="1" duration="1000"/>
+    <frame tileid="0" duration="1000"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="1" height="1">
+  <data encoding="csv">
+2
+</data>
+ </layer>
+</map>
