@@ -193,7 +193,7 @@ namespace Tiled.Net.Test
             Assert.IsNotNull(objectGroup);
             Assert.IsNotNull(objectGroup.Objects);
 
-            var text = objectGroup.Objects[0].Base as TiledText;
+            var text = objectGroup.Objects[0].Object as TiledText;
 
             Assert.IsNotNull(text);
             Assert.AreEqual("Hello, World!", text.Text);

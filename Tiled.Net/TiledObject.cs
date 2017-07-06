@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Tiled
 {
@@ -84,7 +84,7 @@ namespace Tiled
         [XmlElement("polygon", typeof(TiledPolygon))]
         [XmlElement("polyline", typeof(TiledPolyline))]
         [XmlElement("text", typeof(TiledText))]
-        public TiledBaseObject Base;
+        public TiledBaseObject Object;
 
         /// <summary>
         /// Nothing to see here. Used for serialization.
@@ -135,9 +135,9 @@ namespace Tiled
         /// Nothing to see here. Used for serialization.
         /// </summary>
         /// <returns></returns>
-        public bool ShouldSerializeBase()
+        public bool ShouldSerializeObject()
         {
-            return Base != null;
+            return Object != null;
         }
     }
 }
