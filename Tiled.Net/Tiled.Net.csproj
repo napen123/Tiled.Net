@@ -52,6 +52,7 @@
     <Compile Include="TiledPolyline.cs" />
     <Compile Include="TiledProperty.cs" />
     <Compile Include="TiledTerrain.cs" />
+    <Compile Include="TiledText.cs" />
     <Compile Include="TiledTile.cs" />
     <Compile Include="TiledTileData.cs" />
     <Compile Include="TiledTileLayer.cs" />

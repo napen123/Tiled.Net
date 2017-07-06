@@ -26,7 +26,7 @@ namespace Tiled
         /// The blue.
         /// </summary>
         public byte Blue;
-
+        
         /// <summary>
         /// Create a color from a red, green, and blue. <see cref="Alpha"/> is set to 255.
         /// </summary>
@@ -56,8 +56,11 @@ namespace Tiled
         /// <summary>
         /// Convert the color to a hex string.
         /// </summary>
+        /// <paramref name="forceAlpha">
+        /// If true, the alpha will always be put into the hex;
+        /// otherwise, the alpha will only be put in if it's not 255.</paramref>
         /// <returns>The color in hex format.</returns>
-        public string ToHex()
+        public string ToHex(bool forceAlpha = false)
         {
             if (Alpha == 255)
             {

@@ -234,6 +234,7 @@ namespace Tiled
 
                 Properties = map.Properties;
                 Tilesets = map.Tilesets;
+                Groups = map.Groups;
                 Layers = map.Layers;
             }
         }

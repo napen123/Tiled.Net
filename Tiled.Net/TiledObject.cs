@@ -78,11 +78,12 @@ namespace Tiled
         public List<TiledProperty> Properties;
 
         /// <summary>
-        /// The base of the object; the type of object (<see cref="TiledEllipse"/>, <see cref="TiledPolygon"/>, and <see cref="TiledPolyline"/>).
+        /// The base of the object; the type of object (<see cref="TiledEllipse"/>, <see cref="TiledPolygon"/>, <see cref="TiledPolyline"/>, and <see cref="TiledText"/>).
         /// </summary>
         [XmlElement("ellipse", typeof(TiledEllipse))]
         [XmlElement("polygon", typeof(TiledPolygon))]
         [XmlElement("polyline", typeof(TiledPolyline))]
+        [XmlElement("text", typeof(TiledText))]
         public TiledBaseObject Base;
 
         /// <summary>

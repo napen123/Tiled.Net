@@ -161,40 +161,45 @@ namespace Tiled.Net.Test
         [TestMethod]
         public void GroupTest()
         {
-            new TiledMap
-            {
-                Groups = new List<TiledGroup>
-                {
-                    new TiledGroup
-                    {
-                        Name = "Test Group",
-                        Layers = new List<TiledBaseLayer> {new TiledTileLayer {Name = "Test Layer"}},
-                        Groups = new List<TiledGroup>{new TiledGroup{Name = "Sub Group"}}
-                    }
-                }
-            }.Save("testgroupsave.tmx");
-
-
-            /*
             var map = new TiledMap("groups.tmx");
 
             Assert.IsNotNull(map.Groups);
-            Assert.AreEqual("Group 1", map.Groups[0].Name);
-            Assert.AreEqual("Group 2", map.Groups[1].Name);
-
-            Assert.IsNotNull(map.Groups[0].Layers);
-            Assert.AreEqual(2, map.Groups[0].Layers.Count);
-            Assert.AreEqual("Test Layer 1", map.Groups[0].Layers[0].Name);
-            Assert.AreEqual("Test Layer 2", map.Groups[0].Layers[1].Name);
-
-            Assert.IsNotNull(map.Groups[0].Groups);
-            Assert.AreEqual(1, map.Groups[0].Groups.Count);
-            Assert.AreEqual("Sub Group", map.Groups[0].Groups[0].Name);
+            Assert.AreEqual("Group 1", map.Groups[1].Name);
+            Assert.AreEqual("Group 2", map.Groups[0].Name);
 
             Assert.IsNotNull(map.Groups[1].Layers);
-            Assert.AreEqual(1, map.Groups[1].Layers.Count);
-            Assert.AreEqual("Test Layer 3", map.Groups[1].Layers[0].Name);
-            */
+            Assert.AreEqual(2, map.Groups[1].Layers.Count);
+            Assert.AreEqual("Test Layer 1", map.Groups[1].Layers[0].Name);
+            Assert.AreEqual("Test Layer 2", map.Groups[1].Layers[1].Name);
+
+            Assert.IsNotNull(map.Groups[1].Groups);
+            Assert.AreEqual(1, map.Groups[1].Groups.Count);
+            Assert.AreEqual("Sub Group", map.Groups[1].Groups[0].Name);
+
+            Assert.IsNotNull(map.Groups[0].Layers);
+            Assert.AreEqual(1, map.Groups[0].Layers.Count);
+            Assert.AreEqual("Test Layer 3", map.Groups[0].Layers[0].Name);
+        }
+
+        [TestMethod]
+        public void TextTest()
+        {
+            var map = new TiledMap("text.tmx");
+
+            Assert.IsNotNull(map.Layers);
+
+            var objectGroup = map.Layers[0] as TiledObjectGroup;
+
+            Assert.IsNotNull(objectGroup);
+            Assert.IsNotNull(objectGroup.Objects);
+
+            var text = objectGroup.Objects[0].Base as TiledText;
+
+            Assert.IsNotNull(text);
+            Assert.AreEqual("Hello, World!", text.Text);
+            Assert.IsTrue(text.Wrap == 1);
+            Assert.IsTrue(text.Bold == 1);
+            Assert.IsTrue(text.Underline == 1);
         }
     }
 }
