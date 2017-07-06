@@ -38,6 +38,12 @@ namespace Tiled
         public int Id;
 
         /// <summary>
+        /// The type of the tile. Refers to an object type and is used by tile objects.
+        /// </summary>
+        [XmlAttribute("type")]
+        public string Type;
+
+        /// <summary>
         /// Defines the terrain type of each corner of the tile.
         /// </summary>
         [XmlAttribute("terrain")]
@@ -66,6 +72,15 @@ namespace Tiled
         [XmlArray("properties")]
         [XmlArrayItem("property")]
         public List<TiledProperty> Properties;
+
+        /// <summary>
+        /// Nothing to see here. Used for serialization.
+        /// </summary>
+        /// <returns></returns>
+        public bool ShouldSerializeType()
+        {
+            return !string.IsNullOrWhiteSpace(Type);
+        }
 
         /// <summary>
         /// Nothing to see here. Used for serialization.
