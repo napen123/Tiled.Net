@@ -41,6 +41,7 @@
     <Compile Include="TiledColor.cs" />
     <Compile Include="TiledData.cs" />
     <Compile Include="TiledEllipse.cs" />
+    <Compile Include="TiledGroup.cs" />
     <Compile Include="TiledImage.cs" />
     <Compile Include="TiledImageLayer.cs" />
     <Compile Include="TiledBaseLayer.cs" />

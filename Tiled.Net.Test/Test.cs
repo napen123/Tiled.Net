@@ -157,5 +157,44 @@ namespace Tiled.Net.Test
             Assert.AreEqual(1000, frame0.Duration);
             Assert.AreEqual(1000, frame1.Duration);
         }
+
+        [TestMethod]
+        public void GroupTest()
+        {
+            new TiledMap
+            {
+                Groups = new List<TiledGroup>
+                {
+                    new TiledGroup
+                    {
+                        Name = "Test Group",
+                        Layers = new List<TiledBaseLayer> {new TiledTileLayer {Name = "Test Layer"}},
+                        Groups = new List<TiledGroup>{new TiledGroup{Name = "Sub Group"}}
+                    }
+                }
+            }.Save("testgroupsave.tmx");
+
+
+            /*
+            var map = new TiledMap("groups.tmx");
+
+            Assert.IsNotNull(map.Groups);
+            Assert.AreEqual("Group 1", map.Groups[0].Name);
+            Assert.AreEqual("Group 2", map.Groups[1].Name);
+
+            Assert.IsNotNull(map.Groups[0].Layers);
+            Assert.AreEqual(2, map.Groups[0].Layers.Count);
+            Assert.AreEqual("Test Layer 1", map.Groups[0].Layers[0].Name);
+            Assert.AreEqual("Test Layer 2", map.Groups[0].Layers[1].Name);
+
+            Assert.IsNotNull(map.Groups[0].Groups);
+            Assert.AreEqual(1, map.Groups[0].Groups.Count);
+            Assert.AreEqual("Sub Group", map.Groups[0].Groups[0].Name);
+
+            Assert.IsNotNull(map.Groups[1].Layers);
+            Assert.AreEqual(1, map.Groups[1].Layers.Count);
+            Assert.AreEqual("Test Layer 3", map.Groups[1].Layers[0].Name);
+            */
+        }
     }
 }

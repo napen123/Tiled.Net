@@ -165,7 +165,7 @@ namespace Tiled
         /// </summary>
         [XmlAttribute("nextobjectid")]
         public int NextObjectId = 1;
-
+        
         /// <summary>
         /// Custom properties for the map. These are arbitrary and are meant for the user.
         /// </summary>
@@ -178,6 +178,12 @@ namespace Tiled
         /// </summary>
         [XmlElement("tileset")]
         public List<TiledTileset> Tilesets;
+
+        /// <summary>
+        /// The map's groups. Groups are used to organize the layers of the map in a hierarchy.
+        /// </summary>
+        [XmlElement("group", typeof(TiledGroup))]
+        public List<TiledGroup> Groups;
 
         /// <summary>
         /// The map's layers. May contain three types of layers: <see cref="TiledTileLayer"/>, <see cref="TiledObjectGroup"/>, and <see cref="TiledImageLayer"/>.
@@ -355,6 +361,15 @@ namespace Tiled
         public bool ShouldSerializeTilesets()
         {
             return Tilesets != null && Tilesets.Count > 0;
+        }
+
+        /// <summary>
+        /// Nothing to see here. Used for serialization.
+        /// </summary>
+        /// <returns></returns>
+        public bool ShouldSerializeGroups()
+        {
+            return Groups != null && Groups.Count > 0;
         }
 
         /// <summary>

@@ -66,6 +66,9 @@
     <None Include="encoding.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="groups.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="isometric.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
