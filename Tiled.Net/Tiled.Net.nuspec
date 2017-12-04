@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>TiledNet</id>
+        <title>Tiled.Net</title>
+        <description>Library for reading Tiled TMX files.</description>
+        <copyright>Copyright © 2016-2017 Ethan Dagner.</copyright>
+        <version>2.0.0</version>
+        <authors>Napen123</authors>
+        <owners>napen123</owners>
+        <licenseUrl>https://github.com/napen123/Tiled.Net/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/napen123/Tiled.Net</projectUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <releaseNotes>
+        * Animation reading (thanks to spacechase0).
+        * Update XML-comments.
+        * Add TiledText and TiledGroup.
+        * Added a Type field to TiledTile.
+        * Rename Base field in TiledObject to Object.
+        * Other minor fixes, cleanup, and improvements.
+        </releaseNotes>
+        <tags>c# .net tiled tmx</tags>
+    </metadata>
+</package>
