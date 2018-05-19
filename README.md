@@ -6,9 +6,6 @@ Tiled.Net provides a general way of reading and writing TMX (Tiled Map XML) file
 
 Tiled.Net should be compatible with the official format, which can be viewed [here](http://doc.mapeditor.org/reference/tmx-map-format/).
 
-## Dependencies
-No external dependencies required other than .NET 4.5.
-
 ## Usage
 * Add the using statement
 
