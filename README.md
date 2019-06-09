@@ -1,6 +1,8 @@
 # Tiled.Net
 A .NET library for reading Tiled maps.
 
+_Attention:_ This library is no longer being supported. Check out [TiledSharp](https://github.com/marshallward/TiledSharp) for another library that reads Tiled maps.
+
 ## About Tiled.Net
 Tiled.Net provides a general way of reading and writing TMX (Tiled Map XML) files. Tiled.Net aims to be usable everywhere, rather than being tied to things like XNA/MonoGame and Unity. 
 
